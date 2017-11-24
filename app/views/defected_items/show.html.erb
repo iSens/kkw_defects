@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @defected_item.company %>
+</p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @defected_item.full_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @defected_item.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @defected_item.status %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @defected_item.total %>
+</p>
+
+<%= link_to 'Edit', edit_defected_item_path(@defected_item), :class => 'btn btn-primary' %> |
+<%= link_to 'Back', defected_items_path, :class => 'btn btn-info' %>

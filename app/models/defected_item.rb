@@ -1,0 +1,2 @@
+class DefectedItem < ApplicationRecord
+end

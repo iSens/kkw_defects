@@ -1,0 +1,47 @@
+<%= form_with(model: defected_item, local: true) do |form| %>
+  <% if defected_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(defected_item.errors.count, "error") %> prohibited this defected_item from being saved:</h2>
+
+      <ul>
+      <% defected_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">  
+<div class="col-md-8">
+  <div class="control-group">
+    <%= form.label :company %>
+    <%= form.text_field :company, id: :defected_item_company, class: 'form-control'  %>
+  </div>
+
+  <div class="control-group">
+    <%= form.label :name %>
+    <%= form.text_field :full_name, id: :defected_item_full_name, class: 'form-control'  %>
+  </div>
+
+  <div class="control-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :defected_item_description, class: 'form-control'  %>
+  </div>
+
+  <div class="control-group">
+    <%= form.label :status %>
+    <%= form.select(:status, options_for_select(['Pennding', 'Approved']), {}, class: 'form-control') %>
+  </div>
+
+  <div class="control-group">
+    <%= form.label :total %>
+    <%= form.text_field :total, id: :defected_item_total, class: 'form-control' %>
+  </div>
+  <hr />  
+  <div class="control-group">
+    <%= form.submit 'Add a new item', :class => 'btn btn-primary float-left defect__submit-btn' %>
+  </div>
+  </div>
+  </div>
+<% end %>
+
+
