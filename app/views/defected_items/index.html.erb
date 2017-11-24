@@ -6,19 +6,20 @@ Kiddie Kobbler Westboro
 <small class="text-muted">Defected items</small>
 </h3>
 
-<table class="table table-hover">
+<table class="table table-hover sortable" >
 
 
   <thead>
     <tr>
-    <th>ID</th>
+    <th data-defaultsort="asc">#</th>
       <th>Company</th>
-      <th>Name</th>
-      <th>Description</th>
+      <th data-defaultsort='disabled'Name</th>
+      <th data-defaultsort='disabled'>Description</th>
       <th>Status</th>
+      <th>RA Number</th>
       <th>Date</th>
       <th>Total</th>
-      <th colspan="3"></th>
+      <th colspan="3" data-defaultsort='disabled'></th>
     </tr>
   </thead>
 
@@ -30,6 +31,7 @@ Kiddie Kobbler Westboro
         <td><%= defected_item.full_name %></td>
         <td><%= defected_item.description %></td>
         <td><%= defected_item.status %></td>
+        <td><%= defected_item.ar %></td>
         <td><%= defected_item.created_at.strftime('%b. %d, %Y') %></td>
         <td>$<%= defected_item.total %></td>
         <td><%= link_to 'Show', defected_item, class: 'btn btn-sm btn-primary' %></td>

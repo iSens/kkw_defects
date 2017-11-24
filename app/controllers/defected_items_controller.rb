@@ -69,6 +69,6 @@ class DefectedItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def defected_item_params
-      params.require(:defected_item).permit(:company, :full_name, :description, :status, :total)
+      params.require(:defected_item).permit(:company, :full_name, :ar, :description, :status, :total)
     end
 end
