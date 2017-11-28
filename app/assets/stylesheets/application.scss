@@ -11,9 +11,21 @@
  */
  
  @import "bootstrap";
- @import "bootstrap-sortable";
-
+ @import "bootstrap/reboot";
+ @import "bootstrap/type";
+ @import "bootstrap/images";
+ @import "bootstrap/code";
+ @import "bootstrap/grid";
+ @import "bootstrap/tables";
+ @import "bootstrap/forms";
+ @import "bootstrap/buttons";
+ @import "font-awesome";
 
  .kkw__submit-btn {margin: 0 1em 1em 0}
  hr {margin-top: 1rem;margin-bottom: 1rem;border: 0;border-top: 1px solid rgba(0, 0, 0, 0.1)}
+ .kkw__list-heading, .kkw__list-list {padding: .75rem 0}
+ .kkw__tools {display: none; background: #fff; padding: 10px; border: 1px solid #c7c7c7; border-radius: 4px; position: absolute; top: -40px; right: -90px; -webkit-box-shadow: 0 2px 2px 1px #777;-moz-box-shadow: 0 2px 2px 1px #777;box-shadow: 0 2px 2px 1px #777; z-index: 999}
+ .kkw__list-list {position: relative}
+ .kkw__list-list a::after {color: #c7c7c7;content: "\f05a";font-family: 'FontAwesome';font-size: 1em;position: absolute; right: 10px}
+ .kkw__tools a::after {content: ''}
  .defect__description {white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 120px}

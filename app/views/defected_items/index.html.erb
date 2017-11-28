@@ -1,45 +1,31 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+<div class="col"><h3>Kiddie Kobbler Westboro <small class="text-muted"> Defected items</small></h3></div>
+<div class="col"><%= link_to 'Add New Item', new_defected_item_path, class: 'btn-sm btn-success float-right' %></div>
+</div>
 
 
-<h3>
-Kiddie Kobbler Westboro
-<small class="text-muted">Defected items</small>
-</h3>
-
-<table class="table table-sm sortable" >
-
-
-  <thead>
-    <tr>
-    <th data-defaultsort="asc"></th>
-      <th>Company</th>
-      <th data-defaultsort='disabled'>Name</th>
-      <th data-defaultsort='disabled'>Description</th>
-      <th>Status</th>
-      <th>RA#</th>
-      <th>Date</th>
-      <th>Total</th>
-      <th colspan="3" data-defaultsort='disabled'></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @defected_items.each do |defected_item| %>
-      <tr>
-      <td scope="row"><%= defected_item.id %></td>
-        <td><%= defected_item.company %></td>
-        <td><%= defected_item.full_name %></td>
-        <td class="defect__description" ><%= defected_item.description %></td>
-        <td><%= defected_item.status %></td>
-        <td><%= defected_item.ar %></td>
-        <td><%= defected_item.created_at.strftime('%b. %d, %Y') %></td>
-        <td>$<%= defected_item.total %></td>
-        <td class="text-right"><%= link_to 'Show', defected_item, class: 'btn-primary btn-sm' %> | <%= link_to 'Edit', edit_defected_item_path(defected_item), class: ' btn-sm btn-warning' %> | <%= link_to 'Destroy', defected_item, method: :delete, data: { confirm: 'Are you sure?' }, class: ' btn-sm btn-danger' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Defected Item', new_defected_item_path, class: 'btn btn-success' %>
+<ul class="list-group">
+<li class="list-group-item active row kkw__list-heading">
+  <div class="col col-sm-1">Date</div>
+  <div class="col col-md-2">Company</div>
+  <div class="col col-md-1">Name</div>
+  <div class="col col-md-4">Description</div>
+  <div class="col col-md-1">Status</div>
+  <div class="col col-md-2">RA Number</div>
+  <div class="col col-md-1">Total</div>
+</li>
+<% @defected_items.each do |defected_item| %>
+  <li class="list-group-item row kkw__list-list">
+  <div class="col col-md-1"><%= defected_item.created_at.strftime('%b. %d') %></div>
+  <div class="col col-md-2"><%= defected_item.company %></div>
+  <div class="col col-md-1"><%= defected_item.full_name %></div>
+  <div class="col col-md-4" ><%= defected_item.description %></div>
+  <div class="col col-md-1"><%= defected_item.status %></div>
+  <div class="col col-md-2"><%= defected_item.ar %></div>
+  <div class="col col-md-1">$<%= defected_item.total %></div>
+  <a href="#" class="kkw__tools-showHide">
+  <div class="kkw__tools"><%= link_to 'Show', defected_item, class: 'btn-primary btn-sm' %> | <%= link_to 'Edit', edit_defected_item_path(defected_item), class: ' btn-sm btn-warning' %> | <%= link_to 'Destroy', defected_item, method: :delete, data: { confirm: 'Are you sure?' }, class: ' btn-sm btn-danger' %></div></a>
+  </li>
+  <% end %>
+<ul>
