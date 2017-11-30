@@ -57,3 +57,4 @@ gem 'jquery-rails'
 gem 'rails_12factor', group: :production
 gem 'momentjs-rails'
 gem "font-awesome-rails"
+gem 'will_paginate'

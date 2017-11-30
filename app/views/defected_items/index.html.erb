@@ -28,4 +28,9 @@
   <div class="kkw__tools"><%= link_to 'Show', defected_item, class: 'btn-primary btn-sm' %> | <%= link_to 'Edit', edit_defected_item_path(defected_item), class: ' btn-sm btn-warning' %> | <%= link_to 'Destroy', defected_item, method: :delete, data: { confirm: 'Are you sure?' }, class: ' btn-sm btn-danger' %></div></a>
   </li>
   <% end %>
+  <li class="row bold"><div class="col col-md-11 text-right">Total</div><div class="col col-md-1">$<%= @defected_items.sum(:total) %></div></li>
 <ul>
+<div class="digg_pagination">
+<%= will_paginate @defected_items, :container => false %>
+</div>
+
