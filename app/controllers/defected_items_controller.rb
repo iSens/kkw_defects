@@ -4,7 +4,7 @@ class DefectedItemsController < ApplicationController
   # GET /defected_items
   # GET /defected_items.json
   def index
-    @defected_items = DefectedItem.paginate(:page => params[:page], :per_page => 5)
+    @defected_items = DefectedItem.paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /defected_items/1
